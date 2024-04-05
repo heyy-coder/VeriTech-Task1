@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Team</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* Resetting default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif; /* Change font family here */
+        }
+
+        /* Body style */
+        body {
+            background-color: #f4f4f4; /* Light Gray */
+            color: #333; /* Default text color */
+        }
+
+        /* Styling for header */
+        header {
+            background-color: #003366;; /* Light Pink */
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Styling for company description section */
+        .company-description {
+            background-color: #e6e6e6; /* Light Gray */
+            padding: 10px;
+            text-align: center;
+            color: #333; /* Dark Gray */
+            margin: 20px auto;
+            max-width: 500px;
+            border-radius: 10px;
+            transition: background-color 0.3s ease; /* Animation */
+        }
+
+        /* Animation for company description */
+        .company-description:hover {
+            background-color: #d1d1d1; /* Lighter Gray on hover */
+        }
+
+        /* Styling for company description text */
+        .company-description p {
+            font-size: 16px; /* Medium text size */
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        .prince{
+            background-color: lightskyblue; /* Light Gray */
+            padding: 10px;
+            text-align: center;
+            color: #333; /* Dark Gray */
+            margin: 10px auto;
+            max-width: 200px;
+            border-radius: 10px;
+            font-family: serif;
+
+        }
+
+        /* Styling for team members section */
+        .team-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 10px;
+            background-color: #003366; /* Navy Blue */
+            color: #ffffff;
+        }
+
+        /* Styling for each team member card */
+        .team-member {
+            width: 200px; /* Smaller card width */
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+            background-color: #ffffff;
+            transition: all 0.3s ease;
+        }
+
+        /* Hover effect on team member card */
+        .team-member:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Styling for team member name */
+        .team-member h2 {
+            color: #333;
+            font-size: 16px; /* Medium font size */
+            margin-bottom: 5px;
+        }
+
+        /* Styling for team member position */
+        .team-member p {
+            color: #777;
+            font-size: 12px; /* Smaller text size */
+        }
+
+        /* Styling for Font Awesome icons */
+        .fa-icon {
+            font-size: 18px; /* Smaller icon size */
+            margin: 5px;
+            color: #2c3e50;
+        }
+        
+        /* Styling for headings */
+          h3, h4, h5, h6 {
+            color: #800080; /* Purple */
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #003366;
+            color: #ffffff;
+        }
+        .fa-icon[aria-label]:hover {
+            cursor: pointer;
+        }
+        .management-team{
+            text-align: center;
+            padding: 10px;
+            background-color: #003366;
+            color: #ffffff;
+
+        }
+        header {
+            background-color: #003366;; /* Light Pink */
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Styling for search bar */
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .search-input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 300px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        .search-button {
+            padding: 10px 20px;
+            background-color: #ff6600;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #noResultMessage {
+            text-align: center;
+            color: #ff0000; /* Red */
+            display: none;
+            margin-top: 20px;
+        }
+
+        .search-button:hover {
+            background-color: #ff4500; /* Darker shade of orange */
+        }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;600;700&display=swap">
+</head>
+<body>
+    <div style="border: 1px solid black; padding: 10px; margin: 10px;">
+        <header>
+            <h1>The Prince</h1>
+            <!-- Search bar -->
+            <div class="search-container" style="padding-top: 20px;">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search...">
+                <button onclick="search()" class="search-button"><i class="fas fa-search"></i></button>
+            </div>
+        </header>
+        <main>
+            <div class="company-description">
+                <h2>About Our Company</h2>
+                <p>"The Prince" is a dynamic company committed to excellence. With a focus on innovation and customer satisfaction, we strive to lead with integrity and inspire positive change in the industry.</p>
+            </div>
+            <div class="prince">
+                <h3 style="font-weight: 100;"> Meet Our Team</h3>
+            </div>
+            <section class="management-team">
+                <h2 style="font-weight: 100; padding-top: 10px;">Management Team</h2>
+            </section>
+            <section class="sect">
+                <div class="team-section" >
+                    <div class="team-member">
+                        <i class="fas fa-user-circle fa-icon" aria-label="John Doe"></i>
+                        <h3>PRINCE</h3>
+                        <p>Founder/CEO</p>
+                        <div>
+                            <i class="fas fa-envelope fa-icon" aria-label="Email"></i>
+                            <i class="fab fa-twitter fa-icon" aria-label="Twitter"></i>
+                            <i class="fab fa-linkedin fa-icon" aria-label="LinkedIn"></i>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <i class="fas fa-user-circle fa-icon" aria-label="Jane Smith"></i>
+                        <h3>SURAJ</h3>
+                        <p>Founder/CEO</p>
+                        <div>
+                            <i class="fas fa-envelope fa-icon" aria-label="Email"></i>
+                            <i class="fab fa-twitter fa-icon" aria-label="Twitter"></i>
+                            <i class="fab fa-linkedin fa-icon" aria-label="LinkedIn"></i>
+                        </div>
+                    </div>
+                    <!-- Add more team members here -->
+                </div>
+                <div class="team-section">
+                    <div class="team-member">
+                        <i class="fas fa-user-circle fa-icon" aria-label="John Doe"></i>
+                        <h3>RUPESH</h3>
+                        <p>VP, Devlopement</p>
+                        <div>
+                            <i class="fas fa-envelope fa-icon" aria-label="Email"></i>
+                            <i class="fab fa-twitter fa-icon" aria-label="Twitter"></i>
+                            <i class="fab fa-linkedin fa-icon" aria-label="LinkedIn"></i>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <i class="fas fa-user-circle fa-icon" aria-label="Jane Smith"></i>
+                        <h3>AMAR</h3>
+                        <p>VP,Sales</p>
+                        <div>
+                            <i class="fas fa-envelope fa-icon" aria-label="Email"></i>
+                            <i class="fab fa-twitter fa-icon" aria-label="Twitter"></i>
+                            <i class="fab fa-linkedin fa-icon" aria-label="LinkedIn"></i>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <i class="fas fa-user-circle fa-icon" aria-label="Jane Smith"></i>
+                        <h3>RITIK</h3>
+                        <p>VP,Finance</p>
+                        <div>
+                            <i class="fas fa-envelope fa-icon" aria-label="Email"></i>
+                            <i class="fab fa-twitter fa-icon" aria-label="Twitter"></i>
+                            <i class="fab fa-linkedin fa-icon" aria-label="LinkedIn"></i>
+                        </div>
+                    </div>
+                    <!-- Add more team members here -->
+                </div>
+            </section>
+            <section class="management-team" style="margin-top: 10px;">
+                <h2 style="font-weight: 100; padding-top: 10px;">Development Team</h2>
+            </section>
+            <section class="sect2">
+                <div class="team-section" >
+                    <div class="team-member">
+                        <i class="fas fa-user-circle fa-icon" aria-label="John Doe"></i>
+                        <h3>ANSHU</h3>
+                        <p>Software Engineer</p>
+                        <div>
+                            <i class="fas fa-envelope fa-icon" aria-label="Email"></i>
+                            <i class="fab fa-twitter fa-icon" aria-label="Twitter"></i>
+                            <i class="fab fa-linkedin fa-icon" aria-label="LinkedIn"></i>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <i class="fas fa-user-circle fa-icon" aria-label="Jane Smith"></i>
+                        <h3>VIVEK</h3>
+                        <p>Software Engineer</p>
+                        <div>
+                            <i class="fas fa-envelope fa-icon" aria-label="Email"></i>
+                            <i class="fab fa-twitter fa-icon" aria-label="Twitter"></i>
+                            <i class="fab fa-linkedin fa-icon" aria-label="LinkedIn"></i>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <i class="fas fa-user-circle fa-icon" aria-label="John Doe"></i>
+                        <h3>KUNDAN</h3>
+                        <p>Software Engineer</p>
+                        <div>
+                            <i class="fas fa-envelope fa-icon" aria-label="Email"></i>
+                            <i class="fab fa-twitter fa-icon" aria-label="Twitter"></i>
+                            <i class="fab fa-linkedin fa-icon" aria-label="LinkedIn"></i>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <i class="fas fa-user-circle fa-icon" aria-label="Jane Smith"></i>
+                        <h3>ADARSH</h3>
+                        <p>Software Engineer</p>
+                        <div>
+                            <i class="fas fa-envelope fa-icon" aria-label="Email"></i>
+                            <i class="fab fa-twitter fa-icon" aria-label="Twitter"></i>
+                            <i class="fab fa-linkedin fa-icon" aria-label="LinkedIn"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-section" >
+                    <div class="team-member">
+                        <i class="fas fa-user-circle fa-icon" aria-label="Jane Smith"></i>
+                        <h3>RANJAN</h3>
+                        <p>Software Engineer</p>
+                        <div>
+                            <i class="fas fa-envelope fa-icon" aria-label="Email"></i>
+                            <i class="fab fa-twitter fa-icon" aria-label="Twitter"></i>
+                            <i class="fab fa-linkedin fa-icon" aria-label="LinkedIn"></i>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <i class="fas fa-user-circle fa-icon" aria-label="Jane Smith"></i>
+                        <h3>MITHILESH</h3>
+                        <p>Software Engineer</p>
+                        <div>
+                            <i class="fas fa-envelope fa-icon" aria-label="Email"></i>
+                            <i class="fab fa-twitter fa-icon" aria-label="Twitter"></i>
+                            <i class="fab fa-linkedin fa-icon" aria-label="LinkedIn"></i>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <i class="fas fa-user-circle fa-icon" aria-label="Jane Smith"></i>
+                        <h3>ABHISHEK</h3>
+                        <p>Software Engineer</p>
+                        <div>
+                            <i class="fas fa-envelope fa-icon" aria-label="Email"></i>
+                            <i class="fab fa-twitter fa-icon" aria-label="Twitter"></i>
+                            <i class="fab fa-linkedin fa-icon" aria-label="LinkedIn"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="management-team" style="margin-top: 10px;">
+                <h2 style="font-weight: 100; padding-top: 10px;">Sales and Marketing Team</h2>
+            </section>
+            <section class="sect3">
+                <div class="team-section" >
+                    <div class="team-member">
+                        <i class="fas fa-user-circle fa-icon" aria-label="John Doe"></i>
+                        <h3>KUNAL</h3>
+                        <p>Team Lead</p>
+                        <div>
+                            <i class="fas fa-envelope fa-icon" aria-label="Email"></i>
+                            <i class="fab fa-twitter fa-icon" aria-label="Twitter"></i>
+                            <i class="fab fa-linkedin fa-icon" aria-label="LinkedIn"></i>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <i class="fas fa-user-circle fa-icon" aria-label="Jane Smith"></i>
+                        <h3>DEEPAK</h3>
+                        <p>Sales Officer</p>
+                        <div>
+                            <i class="fas fa-envelope fa-icon" aria-label="Email"></i>
+                            <i class="fab fa-twitter fa-icon" aria-label="Twitter"></i>
+                            <i class="fab fa-linkedin fa-icon" aria-label="LinkedIn"></i>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <i class="fas fa-user-circle fa-icon" aria-label="John Doe"></i>
+                        <h3>SHUSHANK</h3>
+                        <p>Sales Officer</p>
+                        <div>
+                            <i class="fas fa-envelope fa-icon" aria-label="Email"></i>
+                            <i class="fab fa-twitter fa-icon" aria-label="Twitter"></i>
+                            <i class="fab fa-linkedin fa-icon" aria-label="LinkedIn"></i>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <i class="fas fa-user-circle fa-icon" aria-label="Jane Smith"></i>
+                        <h3>BITTU</h3>
+                        <p>Sales Officer</p>
+                        <div>
+                            <i class="fas fa-envelope fa-icon" aria-label="Email"></i>
+                            <i class="fab fa-twitter fa-icon" aria-label="Twitter"></i>
+                            <i class="fab fa-linkedin fa-icon" aria-label="LinkedIn"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-section" >
+                    <div class="team-member">
+                        <i class="fas fa-user-circle fa-icon" aria-label="Jane Smith"></i>
+                        <h3>SHUDHANSHU</h3>
+                        <p>Markrting Officer</p>
+                        <div>
+                            <i class="fas fa-envelope fa-icon" aria-label="Email"></i>
+                            <i class="fab fa-twitter fa-icon" aria-label="Twitter"></i>
+                            <i class="fab fa-linkedin fa-icon" aria-label="LinkedIn"></i>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <i class="fas fa-user-circle fa-icon" aria-label="Jane Smith"></i>
+                        <h3>ABHISHEK</h3>
+                        <p>Markrting Officer</p>
+                        <div>
+                            <i class="fas fa-envelope fa-icon" aria-label="Email"></i>
+                            <i class="fab fa-twitter fa-icon" aria-label="Twitter"></i>
+                            <i class="fab fa-linkedin fa-icon" aria-label="LinkedIn"></i>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <i class="fas fa-user-circle fa-icon" aria-label="Jane Smith"></i>
+                        <h3>RISHIKESH</h3>
+                        <p>Markrting Officer</p>
+                        <div>
+                            <i class="fas fa-envelope fa-icon" aria-label="Email"></i>
+                            <i class="fab fa-twitter fa-icon" aria-label="Twitter"></i>
+                            <i class="fab fa-linkedin fa-icon" aria-label="LinkedIn"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    <!-- No result message -->
+    <div id="noResultMessage">Employee not found.</div>
+        </main>
+        <footer>
+            &copy; 2024 The Prince. All rights reserved.
+        </footer>
+    </div>
+</body>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script>
+    function search() {
+        var input = document.getElementById("searchInput").value.toUpperCase();
+        var sections = document.querySelectorAll("section:not(.management-team)");
+        var noResultMessage = document.getElementById("noResultMessage");
+        var found = false;
+
+        // Hide all sections initially
+        sections.forEach(function(section) {
+            section.style.display = "none";
+        });
+
+        for (var i = 0; i < sections.length; i++) {
+            var teamMembers = sections[i].getElementsByClassName("team-member");
+
+            for (var j = 0; j < teamMembers.length; j++) {
+                var name = teamMembers[j].getElementsByTagName("h3")[0];
+                var fullName = name.textContent || name.innerText;
+
+                if (fullName.toUpperCase().indexOf(input) > -1) {
+                    // Show the section where result is found
+                    sections[i].style.display = ""; 
+                    // Show only the card with the searched team member
+                    teamMembers[j].style.display = "";
+                    found = true;
+                } else {
+                    // Hide the card if not the searched team member
+                    teamMembers[j].style.display = "none";
+                }
+            }
+        }
+
+        if (!found) {
+            // If no employee found, hide all sections and show no result message
+            sections.forEach(function(section) {
+                section.style.display = "none";
+            });
+            noResultMessage.style.display = "block";
+        } else {
+            noResultMessage.style.display = "none";
+        }
+    }
+</script>
+
+
+</html>
